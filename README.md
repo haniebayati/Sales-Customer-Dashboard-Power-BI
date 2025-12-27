@@ -98,7 +98,7 @@ Data Cleaning → Modeling → DAX → Visualization → Insight Extraction
 
 ---
 ##  برخی از Measures 
-'''DAX
+```DAX
 
 -- فروش کل
 Total Sales = SUM(Orders[Sales])
