@@ -153,12 +153,3 @@ SUMX(
     RELATEDTABLE(Products),
     SUM(Orders[Sales])
 )
-
-
----
-
-
-
-
-
-
