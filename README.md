@@ -4,7 +4,7 @@
 داشبورد تحلیلی فروش و مشتریان برای بررسی عملکرد، روند رشد و تحلیل محصول و مشتری.
 هدف پروژه: استخراج insight تجاری عملی و کمک به تصمیم‌گیری مدیریتی.
 
-اهداف پروژه
+## اهداف پروژه
 
 تحلیل فروش و تعداد سفارش‌ها. 
 بررسی روند رشد سالانه و تغییرات ماهانه. 
@@ -12,27 +12,32 @@
 تحلیل رفتار مشتریان و سهم هر سگمنت. 
 استخراج insight عملی برای تصمیمات مدیریتی. 
 
-ابزار مورد استفاده
+## ابزار مورد استفاده
 
-Power BI برای تحلیل و visualization. 
-Power Query برای پاکسازی و آماده‌سازی داده. 
-DAX برای محاسبه Measures. 
-Star Schema برای مدل داده. 
+- Power BI برای تحلیل و visualization.
+- Power Query برای پاکسازی و آماده‌سازی داده. - DAX برای محاسبه Measures. 
+- Star Schema برای مدل داده. 
 
-ساختار داده
+## ساختار داده
 
 Fact Table:
 
 Orders: orderid, customerid, cost, order date, productid, quantity, region id, sales. 
+
 Dimension Tables:
-Customers: customerid, name, segment. 
+
+Customers: customerid, name, segment.
+
 Products: productid, categoryid, price, product name. 
+
 Category: categoryid, category name. 
 Region: regionid, region name. 
+
 Date: date, month, year, day (ساخته شده با DAX)  
 
 
-measureها
+## measureها
+
 -- فروش کل
 Total Sales = SUM(Orders[Sales])
 
