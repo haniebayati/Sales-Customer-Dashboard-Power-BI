@@ -121,7 +121,6 @@ VAR CurrentYearSales = CALCULATE([Total Sales], YEAR(Orders[Order Date]) = SELEC
 VAR PreviousYearSales = CALCULATE([Total Sales], YEAR(Orders[Order Date]) = SELECTEDVALUE(Date[Year]) - 1)
 RETURN DIVIDE(CurrentYearSales - PreviousYearSales, PreviousYearSales, 0)
 
-
 -- میانگین فروش هر سفارش
 Average Sales per Order = DIVIDE([Total Sales], [Total Orders], 0)
 
