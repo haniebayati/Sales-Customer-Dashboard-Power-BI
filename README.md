@@ -99,7 +99,7 @@ Data Cleaning → Modeling → DAX → Visualization → Insight Extraction
 ---
 ##  برخی از Measures 
 
-```DAX
+
 -- فروش کل
 Total Sales = SUM(Orders[Sales])
 
@@ -121,11 +121,6 @@ VAR CurrentYearSales = CALCULATE([Total Sales], YEAR(Orders[Order Date]) = SELEC
 VAR PreviousYearSales = CALCULATE([Total Sales], YEAR(Orders[Order Date]) = SELECTEDVALUE(Date[Year]) - 1)
 RETURN DIVIDE(CurrentYearSales - PreviousYearSales, PreviousYearSales, 0)
 
--- رشد فروش ماهانه (MoM)
-MoM Sales Growth =
-VAR CurrentMonthSales = CALCULATE([Total Sales], MONTH(Orders[Order Date]) = SELECTEDVALUE(Date[Month Number]), YEAR(Orders[Order Date]) = SELECTEDVALUE(Date[Year]))
-VAR PreviousMonthSales = CALCULATE([Total Sales], MONTH(Orders[Order Date]) = SELECTEDVALUE(Date[Month Number])-1, YEAR(Orders[Order Date]) = SELECTEDVALUE(Date[Year]))
-RETURN DIVIDE(CurrentMonthSales - PreviousMonthSales, PreviousMonthSales, 0)
 
 -- میانگین فروش هر سفارش
 Average Sales per Order = DIVIDE([Total Sales], [Total Orders], 0)
@@ -147,9 +142,3 @@ Sales by Region = SUM(Orders[Sales])
 -- سهم هر Region از فروش کل
 Region Share % = DIVIDE([Sales by Region], [Total Sales], 0)
 
--- فروش کل هر Category
-Sales by Category =
-SUMX(
-    RELATEDTABLE(Products),
-    SUM(Orders[Sales])
-)
